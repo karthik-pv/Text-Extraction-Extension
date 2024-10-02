@@ -24,7 +24,11 @@ function iterateThroughHTMLElements() {
     ) {
       const cleanText = element.innerText;
       if (cleanText && !seenTexts.has(cleanText)) {
-        dataString += cleanText + "\n";
+        dataString +=
+          cleanText +
+          "\n" +
+          "------------------------------------------------------------------------------------" +
+          "\n";
         seenTexts.add(cleanText);
 
         console.log(cleanText);

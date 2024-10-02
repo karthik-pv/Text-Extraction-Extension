@@ -30,7 +30,11 @@ function collectVisibleTextOnScreen() {
     ) {
       const cleanText = element.innerText.replace(/\s+/g, " ").trim();
       if (cleanText && !seenTexts.has(cleanText)) {
-        visibleDataString += cleanText + "\n";
+        visibleDataString +=
+          cleanText +
+          "\n" +
+          "---------------------------------------------------------------------------------------" +
+          "\n";
         seenTexts.add(cleanText);
         console.log("Visible text: ", cleanText);
       }

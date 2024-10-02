@@ -18,6 +18,17 @@ document.getElementById("extract-full-page").addEventListener("click", () => {
   });
 });
 
+document
+  .getElementById("amazon-product-scrape")
+  .addEventListener("click", () => {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      chrome.scripting.executeScript({
+        target: { tabId: tabs[0].id },
+        files: ["content2.js"],
+      });
+    });
+  });
+
 document.getElementById("download-data").addEventListener("click", () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.scripting.executeScript({
